@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7b917b"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+        <Button
+            android:id="@+id/button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Service"
+            />
+
+        <Button
+            android:id="@+id/button_bind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bind Service"
+            />
+
+        <Button
+            android:id="@+id/buttonGetCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="get count"
+            />
+        <Button
+            android:id="@+id/buttonUnbound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unbound Service"
+            />
+        <Button
+            android:id="@+id/button_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Service"
+            />
+        <Button
+            android:id="@+id/button_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service Stats"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,10 +49,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_bind.setOnClickListener{
-            if (!isServiceRunning(serviceClass)) {
-                startService(intent) // если не стартовать сервис, приложение падает при вызове unbindService(myConnection)
-            }
-
             bindService(intent, myConnection, Context.BIND_AUTO_CREATE)
             // Третий параметр представляет собой флаг, указывающий параметры привязки.
             // Обычно им является BIND_AUTO_CREATE, создающий службу, если она уже не выполняется.

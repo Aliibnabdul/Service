@@ -9,7 +9,7 @@ import java.util.*
 
 class RandomNumberService : Service() {
 
-    private lateinit var mHandler: Handler
+    private var mHandler: Handler? = null
     private lateinit var mRunnable: Runnable
     private var count = 0
     private var stateMess = ""
@@ -29,9 +29,9 @@ class RandomNumberService : Service() {
         stateMess = "Service started."
         toast(stateMess)
 
-        mHandler = Handler()
         mRunnable = Runnable { showRandomNumber() }
-        mHandler.postDelayed(mRunnable, 5000)
+        mHandler = Handler()
+        mHandler?.postDelayed(mRunnable, 5000)
 
         return START_REDELIVER_INTENT // START_STICKY
     }
@@ -60,7 +60,7 @@ class RandomNumberService : Service() {
         super.onDestroy()
         stateMess = "Service onDestroy()"
         toast(stateMess)
-        mHandler.removeCallbacks(mRunnable)
+        mHandler?.removeCallbacks(mRunnable)
     }
 
     /** method for clients  */
@@ -73,6 +73,6 @@ class RandomNumberService : Service() {
         count++
         val number = mGenerator.nextInt(100)
         toast("Random Number : $number")
-        mHandler.postDelayed(mRunnable, 5000)
+        mHandler?.postDelayed(mRunnable, 5000)
     }
 }
